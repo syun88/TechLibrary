@@ -38,21 +38,25 @@
             background-color: #0056b3;
         }
         .category-container {
-            display: none; /* 最初は隠す */
+            display: none; /* 最初は非表示 */
             padding: 2rem;
             text-align: center;
         }
+        .category-container .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+        }
         .category-container a {
-            display: inline-block;
-            margin: 1rem;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
+            padding: 1.5rem 2rem;
+            font-size: 1.5rem; /* ボタンを少し大きく */
             color: #fff;
             background-color: #007bff;
-            border: none;
             border-radius: 5px;
             text-decoration: none;
-            cursor: pointer;
+            display: inline-block;
             transition: background-color 0.3s ease;
         }
         .category-container a:hover {
@@ -76,10 +80,12 @@
     </header>
     <main>
         <div class="category-container" id="categoryMenu">
-            <a href="electric.html">電気電子</a>
-            <a href="programming.html">プログラミング</a>
-            <a href="computer.html">パソコン知識</a>
-            <a href="control.html">制御</a>
+            <div class="category-grid">
+                <a href="electric.html">電気電子</a>
+                <a href="programming.html">プログラミング</a>
+                <a href="computer.html">パソコン知識</a>
+                <a href="control.html">制御</a>
+            </div>
         </div>
         <p style="text-align: center; padding: 2rem;">TechLibraryへようこそ！カテゴリを選択してください。</p>
     </main>
