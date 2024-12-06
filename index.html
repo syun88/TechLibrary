@@ -15,20 +15,36 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 1rem 0;
-            text-align: center;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        main {
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .menu-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .menu-btn:hover {
+            background-color: #0056b3;
+        }
+        .category-container {
+            display: none; /* 最初は隠す */
             padding: 2rem;
             text-align: center;
         }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .category-button {
+        .category-container a {
+            display: inline-block;
+            margin: 1rem;
             padding: 1rem 2rem;
             font-size: 1.2rem;
             color: #fff;
@@ -39,7 +55,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        .category-button:hover {
+        .category-container a:hover {
             background-color: #0056b3;
         }
         footer {
@@ -56,19 +72,29 @@
 <body>
     <header>
         <h1>TechLibrary</h1>
-        <p>電気電子、プログラミング、パソコン知識、制御の基礎を学ぶ</p>
+        <button class="menu-btn" onclick="toggleMenu()">メニュー</button>
     </header>
     <main>
-        <p>カテゴリを選択してください:</p>
-        <div class="button-container">
-            <a href="electric.html" class="category-button">電気電子</a>
-            <a href="programming.html" class="category-button">プログラミング</a>
-            <a href="computer.html" class="category-button">パソコン知識</a>
-            <a href="control.html" class="category-button">制御</a>
+        <div class="category-container" id="categoryMenu">
+            <a href="electric.html">電気電子</a>
+            <a href="programming.html">プログラミング</a>
+            <a href="computer.html">パソコン知識</a>
+            <a href="control.html">制御</a>
         </div>
+        <p style="text-align: center; padding: 2rem;">TechLibraryへようこそ！カテゴリを選択してください。</p>
     </main>
     <footer>
         <p>&copy; 2024 TechLibrary. All rights reserved.</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('categoryMenu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block'; // 表示
+            } else {
+                menu.style.display = 'none'; // 非表示
+            }
+        }
+    </script>
 </body>
 </html>
