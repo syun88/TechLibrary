@@ -22,6 +22,26 @@
             padding: 2rem;
             text-align: center;
         }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .category-button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .category-button:hover {
+            background-color: #0056b3;
+        }
         footer {
             background-color: #333;
             color: #fff;
@@ -36,11 +56,16 @@
 <body>
     <header>
         <h1>TechLibrary</h1>
-        <p>電気電子、プログラミング、パソコン、AI、IoTの基礎を学ぶ</p>
+        <p>電気電子、プログラミング、パソコン知識、制御の基礎を学ぶ</p>
     </header>
     <main>
-        <p>現在、コンテンツを準備中です。</p>
-        <p>しばらくお待ちください。</p>
+        <p>カテゴリを選択してください:</p>
+        <div class="button-container">
+            <a href="electric.html" class="category-button">電気電子</a>
+            <a href="programming.html" class="category-button">プログラミング</a>
+            <a href="computer.html" class="category-button">パソコン知識</a>
+            <a href="control.html" class="category-button">制御</a>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 TechLibrary. All rights reserved.</p>
